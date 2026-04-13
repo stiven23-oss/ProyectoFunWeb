@@ -57,9 +57,11 @@
           </button>
         </div>
 
-        <!-- 🔥 BOTÓN REGISTRARSE -->
-        <div class="d-grid mt-2">
-          <a href="registro.html" class="btn btn-outline-secondary">
+        <!-- 🔥 CORRECCIÓN IMPORTANTE AQUÍ -->
+        <div class="text-center mt-2">
+          <small class="text-muted">¿No tienes cuenta?</small><br />
+          <!-- ⚠️ Usa ruta RELATIVA -->
+          <a href="./registro.html" class="fw-bold">
             Registrarse
           </a>
         </div>
@@ -117,7 +119,6 @@
         if (response.ok && data.succes) {
           showAlert("success", "Login exitoso.");
 
-          // Guardar sesión
           localStorage.setItem("usuarioAutenticado", JSON.stringify(data.data));
 
         } else {
@@ -142,7 +143,7 @@
 
         showAlert(
           "danger",
-          "No fue posible conectarse al servicio. Verifique que el backend esté ejecutándose."
+          "No fue posible conectarse al servicio."
         );
       } finally {
         btnLogin.disabled = false;
